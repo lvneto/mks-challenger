@@ -8,26 +8,26 @@ import { Movie } from './entities/movie.entity';
 export class MoviesService {
   constructor(
     @Inject('MOVIES_REPOSITORY')
-    private photoRepository: Repository<Movie>,
+    private moviesRepository: Repository<Movie>,
   ) {}
 
   create(createMovieDto: CreateMovieDto) {
-    return 'This action adds a new movie';
+    return this.moviesRepository.save(createMovieDto);
   }
 
   findAll() {
-    return this.photoRepository.find();
+    return this.moviesRepository.find();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} movie`;
+  findOne(id: string) {
+    return this.moviesRepository.findOne({ where: { id } });
   }
 
-  update(id: number, updateMovieDto: UpdateMovieDto) {
-    return `This action updates a #${id} movie`;
+  update(id: string, updateMovieDto: UpdateMovieDto) {
+    return this.moviesRepository.update(id, updateMovieDto);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} movie`;
+  remove(id: string) {
+    return this.moviesRepository.delete(id);
   }
 }

@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 export class CreateMovieDto {
   @ApiProperty()
-  id: number;
+  id: string;
 
   @ApiProperty({ required: true, default: true })
   name: string;
