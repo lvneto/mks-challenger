@@ -1,9 +1,10 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryColumn, Generated } from 'typeorm';
 
 @Entity()
 export class Movie {
-  @PrimaryGeneratedColumn()
-  id: number;
+  @PrimaryColumn({ type: 'uuid' })
+  @Generated('uuid')
+  id: string;
 
   @Column({ length: 500 })
   name: string;
@@ -12,7 +13,7 @@ export class Movie {
   description: string;
 
   @Column('int')
-  views: number;
+  views: string;
 
   @Column()
   isPublished: boolean;
