@@ -6,8 +6,8 @@ export class Movie {
   @Generated('uuid')
   id: string;
 
-  @Column({ length: 500 })
-  name: string;
+  @Column()
+  title: string;
 
   @Column()
   description: string;
@@ -15,6 +15,6 @@ export class Movie {
   @Column()
   views: string;
 
-  @Column()
-  isPublished: string;
+  @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP(6)' })
+  published: Date;
 }

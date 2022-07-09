@@ -4,14 +4,11 @@ import { CreateMovieDto } from './create-movie.dto';
 
 export class UpdateMovieDto extends PartialType(CreateMovieDto) {
   @ApiProperty({ required: true })
-  name: string;
+  title: string;
 
   @ApiProperty({ required: true })
   description: string;
 
   @ApiProperty({ required: false })
   views?: string;
-
-  @ApiProperty({ required: false })
-  isPublished?: string;
 }
