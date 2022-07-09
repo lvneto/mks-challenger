@@ -9,12 +9,12 @@ export class Movie {
   @Column({ length: 500 })
   name: string;
 
-  @Column('text')
+  @Column()
   description: string;
 
-  @Column('int')
+  @Column()
   views: string;
 
   @Column()
-  isPublished: boolean;
+  isPublished: string;
 }

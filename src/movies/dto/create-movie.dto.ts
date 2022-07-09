@@ -1,14 +1,14 @@
 import { ApiProperty } from '@nestjs/swagger';
 export class CreateMovieDto {
-  @ApiProperty({ required: true, default: true })
+  @ApiProperty({ required: true })
   name: string;
 
-  @ApiProperty({ required: true, default: true })
+  @ApiProperty({ required: true })
   description: string;
 
-  @ApiProperty({ required: false, default: true })
+  @ApiProperty({ required: false })
   views?: string;
 
-  @ApiProperty({ required: false, default: true })
-  isPublished?: boolean = true;
+  @ApiProperty({ required: false })
+  isPublished?: string;
 }
