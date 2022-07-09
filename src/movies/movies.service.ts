@@ -16,7 +16,7 @@ export class MoviesService {
   }
 
   findAll(take: number, skip: number) {
-    return this.moviesRepository.find({
+    return this.moviesRepository.findAndCount({
       take,
       skip,
     });
