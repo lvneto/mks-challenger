@@ -15,8 +15,11 @@ export class MoviesService {
     return this.moviesRepository.save(createMovieDto);
   }
 
-  findAll() {
-    return this.moviesRepository.find();
+  findAll(take: number, skip: number) {
+    return this.moviesRepository.find({
+      take,
+      skip,
+    });
   }
 
   findOne(id: string) {

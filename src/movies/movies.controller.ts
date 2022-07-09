@@ -6,6 +6,7 @@ import {
   Patch,
   Param,
   Delete,
+  Query,
 } from '@nestjs/common';
 import { MoviesService } from './movies.service';
 import { CreateMovieDto } from './dto/create-movie.dto';
@@ -21,8 +22,10 @@ export class MoviesController {
   }
 
   @Get()
-  findAll() {
-    return this.moviesService.findAll();
+  findAll(@Query('take') take, @Query('skip') skip) {
+    take ? take : (take = 30);
+    skip ? skip : (skip = 0);
+    return this.moviesService.findAll(+take, +skip);
   }
 
   @Get(':id')
