@@ -24,6 +24,30 @@
 
 ## Description
 
+```.About the project
+  This project has to goal make crud operations about movies informations.
+```
+
+```.env
+  You can create your .env to set your credencials database, follow .env.example.
+```
+
+```.Technologies
+  This project was building with, NestJS, TypeOrm, TypeScript and Swagger.
+```
+
+```.Technologies experience
+Nest 6 months.
+Axios 1 year and 8 months
+TypeScript 1 Year and 8 months
+Swagger 6 months
+```
+
+```
+To see endpoints at swagger run npm run start and access urlapi/api
+
+```
+
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
 ## Installation
@@ -58,17 +82,5 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Support
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
-# mks-challenger
