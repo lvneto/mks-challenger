@@ -18,6 +18,7 @@ export const typeormProviders = [
           ssl: {
             rejectUnauthorized: false,
           },
+        },
       });
 
       return dataSource.initialize();
