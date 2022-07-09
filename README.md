@@ -41,6 +41,7 @@ Nest 6 months.
 Axios 1 year and 8 months
 TypeScript 1 Year and 8 months
 Swagger 6 months
+Postgres 6 months
 ```
 
 ```
