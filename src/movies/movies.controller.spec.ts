@@ -1,5 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { CreateMovieDto } from './dto/create-movie.dto';
+import { UpdateMovieDto } from './dto/update-movie.dto';
 import { MoviesController } from './movies.controller';
 import { MoviesService } from './movies.service';
 
@@ -12,6 +13,9 @@ describe('Movies Controller unit terst', () => {
       useFactory: () => ({
         create: jest.fn(() => []),
         findAll: jest.fn(() => []),
+        findOne: jest.fn(() => []),
+        update: jest.fn(() => []),
+        remove: jest.fn(() => []),
       }),
     };
     const app: TestingModule = await Test.createTestingModule({
@@ -43,5 +47,36 @@ describe('Movies Controller unit terst', () => {
   it('calling findAll method without parameters', () => {
     movieController.findAll(undefined, undefined);
     expect(spyService.findAll).toHaveBeenCalled();
+  });
+
+  it('calling findOneById', () => {
+    movieController.findOne('1');
+    expect(spyService.findOne).toHaveBeenCalled();
+  });
+
+  it('calling findOneById without parameters', () => {
+    movieController.findOne('1');
+    expect(spyService.findOne).not.toEqual(null);
+  });
+
+  it('calling update', () => {
+    const dto = new UpdateMovieDto();
+    movieController.update('1', dto);
+    expect(spyService.update).toHaveBeenCalled();
+  });
+
+  it('calling update without body', () => {
+    const dto = new UpdateMovieDto();
+    expect(movieController.update('1', dto)).not.toEqual(null);
+  });
+
+  it('calling remove', () => {
+    expect(movieController.remove('1'));
+    expect(spyService.remove).toHaveBeenCalled();
+  });
+
+  it('calling remove without id', () => {
+    expect(movieController.remove('1'));
+    expect(spyService.remove).not.toEqual(null);
   });
 });
